@@ -12,7 +12,7 @@ Arch Linux (April 2022)
 - notification daemon: **dunst**		
 - systray application: **trayer**
 - wallpaper manager: **feh**
-- screensaver: **slock**
+- screensaver: **slock** / **xautolock**
 - display manager: **autorandr**
 - network: **nm-applet**
 - bluetooth: **blueman-applet**

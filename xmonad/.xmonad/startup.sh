@@ -51,6 +51,9 @@ if [ -z "$(pgrep blueman-applet)" ] ; then
    blueman-applet &
 fi
 
+# slock (after 15 min inactivity)
+xautolock -time 15 -locker slock &
+
 # volume-control
 $HOME/.xmonad/volume-control.sh
 
