@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2034
+# This issue is ignored because it is part of a larger file that calls upon all variables listed
+
+# To edit this file copy it to `${HOME}/.config/dmscripts/config`
+# `cp /etc/dmscripts/config ${HOME}/.config/dmscripts/config`
+
+# Defined variables, modify anything in quotes to your prefered software
+
+# -p is needed as we use prompts, alternative programs have to handle prompts well.
+
+DMENU="dmenu -i -l 20 -p"
+
+DMBROWSER="qutebrowser"
+DMTERM="alacritty -e"
+DMEDITOR="${DMTERM} vim"
+
+# TODO: Rename this variable to something more traditional
+logout_locker='slock'
+
+# This case statement lets you change what the DMENU variable is for different scripts, so if you
+# want a unique variable for each script you can
+# syntax is as follows:
+# "<ending-of-script>") DMENU="your variable here"
+# *) should be left blank, global variables are defined above
+
+# include -p in standard dmenu as we use prompts by default
+case "${0##*-}" in
+#  "colpick") DMENU="dmenu -i -p";;
+#  "confedit") DMENU="dmenu -i -l 30 -p";;
+#  "youtube") DMBROWSER="firefox";;
+  *);;
+esac
+
+# "${0##*-}" means grab the 0th argument (which is always the path to the program) starting from the
+# last dash. This gives us the word after the - which is what we are searching for in the case
+# statement. ie dm-man -> man
+
+# An awk equivalent is: 
+# awk -F"-" '{print $NF}'
+# Sadly cut has no easy equivalent
+
+# TODO: Move almost all of these variables into the case statement
+# TODO: Make some of the more useful ones general variables
+# IE a pictures directory, an audio directory, config locations, etc
+
+# dm-bookman 
+bookman_show_source=1
+
+# dm-setbg
+setbg_dir="${HOME}/.wallpapers"
+# Set this to 1 if you want to use imv and wayland, 0 if you want to use sxiv
+# Note that sxiv is X11 only, you need to mark the image you want to use.
+use_imv=0 
+
+# dm-maim
+maim_dir="${HOME}/Downloads"
+maim_file_prefix="maim"
+
+# Search engine config 
+declare -A websearch
+# Syntax:
+# websearch[name]="https://www.example.com/search?q="
+
+# Search Engines
+websearch[duckduckgo]="https://duckduckgo.com/?q="
+websearch[google]="https://www.google.com/search?q="
+# Information/News
+websearch[wikipedia]="https://en.wikipedia.org/w/index.php?search="
+# Social Media
+websearch[youtube]="https://www.youtube.com/results?search_query="
+# Online Shopping
+websearch[amazon]="https://www.amazon.com/s?k="
+# Development
+websearch[github]="https://github.com/search?q="
+websearch[stackoverflow]="https://stackoverflow.com/search?q="
+
+_revision=22

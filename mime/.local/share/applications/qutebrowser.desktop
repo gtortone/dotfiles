@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Qutebrowser
+Exec=qutebrowser --target window
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/qute;
+Terminal=false
+NoDisplay=true
+Comment=Created by Mimeo

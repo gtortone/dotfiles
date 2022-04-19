@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+CURMON=`cat ~/.autorandr_current_profile`
+
+if [[ $CURMON == "mobile" ]]
+then
+   exec /usr/bin/alacritty -o font.size=8.5 "$@"
+elif [[ $CURMON == "docked" ]] 
+then
+   exec /usr/bin/alacritty -o font.size=11 "$@"
+else
+   exec /usr/bin/alacritty "$@"
+fi

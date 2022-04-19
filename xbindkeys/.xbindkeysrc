@@ -1,0 +1,52 @@
+# laptop brighness up
+"brightnessctl s +10% > /dev/null && perc=$(brightnessctl -m | cut -d',' -f4) && notify-send -t 1000 $perc -h string:x-canonical-private-synchronous:brightness_percentage -h int:value:$perc --app-name brightnessctl --icon monitor"
+    m:0x10 + c:233
+    Mod2 + XF86MonBrightnessUp
+
+# laptop brighness down
+"brightnessctl s 10%- > /dev/null && perc=$(brightnessctl -m | cut -d',' -f4) && notify-send -t 1000 $perc -h string:x-canonical-private-synchronous:brightness_percentage -h int:value:$perc --app-name brightnessctl --icon monitor"
+    m:0x10 + c:232
+    Mod2 + XF86MonBrightnessDown
+
+# thumb wheel up => increase volume
+# b:6 Logitech MX Master
+# b:9 Aula F808
+"~/.xmonad/volume-control.sh up"
+   b:7
+
+# thumb wheel down => lower volume
+# b:7 Logitech MX Master
+# b:8 Aula F808
+"~/.xmonad/volume-control.sh down"
+   b:6
+
+# backward button => mute toggle
+# b:8 Logitech MX Master
+# b:5 Aula F808
+"~/.xmonad/volume-control.sh toggle"
+   b:8
+
+# key mute => mute toggle
+"~/.xmonad/volume-control.sh toggle"
+    m:0x0 + c:121
+    XF86AudioMute
+
+# key volume down => lower volume
+"~/.xmonad/volume-control.sh down"
+    m:0x0 + c:122
+    XF86AudioLowerVolume
+
+# key volume up => increase volume
+"~/.xmonad/volume-control.sh up"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume
+
+# set mobile display (LCD monitor)
+"autorandr --load mobile"
+    m:0xc + c:10
+    Control+Alt + 1
+
+# set docked display (external monitor)
+"autorandr --load docked"
+    m:0xc + c:11
+    Control+Alt + 2

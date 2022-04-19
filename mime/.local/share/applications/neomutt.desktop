@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Neomutt
+TryExec=/usr/bin/neomutt
+Exec=alacritty -e /usr/bin/neomutt %U
+Terminal=true
+NoDisplay=true
+MimeType=x-scheme-handler/mailto;

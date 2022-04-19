@@ -1,0 +1,7 @@
+[user]
+	email = gennaro.tortone@na.infn.it
+	name = Gennaro Tortone
+[core]
+	editor = vi
+[push]
+	default = matching
