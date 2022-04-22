@@ -24,7 +24,7 @@ fi
 dunst &
 
 # Wallpaper
-feh --bg-center .cache/wall
+feh --no-fehbg --bg-center .cache/wall
 
 # xbindkeys
 if [ -z "$(pgrep xbindkeys)" ] ; then
