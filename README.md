@@ -29,8 +29,9 @@ Arch Linux (April 2022)
 - Terminal: **alacritty**
 - MIME manager: **mimeo**
 - Calculator: **mate-calculator**
-- Web browser: **qutebrowser** 
-- Mail reader: **neomutt**
+- Web browser: **qutebrowser**
+- Address book: **abook** 
+- Mail reader: **neomutt** / **isync** / **notmuch**
 - File browsing: **vifm** / **pcmanfm**
 - Image viewer: **sxiv** / **viewnior**
 - Video player: **vlc** / **mpv**
