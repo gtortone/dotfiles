@@ -8,6 +8,7 @@ Arch Linux (April 2022)
 
 ### Window manager components
 
+- window manager: **xmonad**
 - status bar: **xmobar**
 - notification daemon: **dunst**		
 - systray application: **trayer**
@@ -39,7 +40,7 @@ Arch Linux (April 2022)
 - Launcher: **dmenu** / **rofi**
 - Screenshot: **maim**
 - Calendar: **gsimplecal**
-- CPU frequency manager:	**cpupower-gui**
+- CPU frequency manager: **cpupower-gui**
 - Keyboard layout: **setxkbmap**
 - Audio CLI: **ponymix**
 - Touchpad config: **xinput**
