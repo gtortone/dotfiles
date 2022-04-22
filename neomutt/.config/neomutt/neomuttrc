@@ -4,59 +4,54 @@ set edit_headers              # show headers when composing
 set fast_reply                # skip to compose when replying
 set forward_quote             # include message in forwards
 set include                   # include message in replies
+set markers = no	            # Disables the `+` displayed at line wraps
 set text_flowed               
 unset help                    # no help bar at the top of index
 set wait_key = no             # do not ask press key after command exec
 set realname = "Gennaro Tortone"
 set from="gennaro.tortone@na.infn.it"
 set use_from = yes
-# Pager View Options
 set pager_index_lines = 10    # Shows 10 lines of index when pager is active
 set pager_context = 3
 set pager_stop
 set menu_scroll
 set tilde
+set auto_tag
 unset markers
 set print_command= 'set -e; f=`mktemp -p "$HOME"/.cache/muttprint`; \
    /usr/bin/muttprint -n fontfamily=Helvetica -P A4 -C "tee;" | tee $f > /dev/null; /usr/bin/atril "$f"; rm "$f"'
 set mailcap_path=$HOME/.config/neomutt/mailcap
+set query_command	= "abook --mutt-query %s"
 
-# imap
-set imap_user = "tortone"
-set imap_pass = `pass show imap-qz.na.infn.it`
-set folder=imaps://$imap_user:$imap_pass@imap-qz.na.infn.it/
-set spoolfile="+INBOX"
+# mail
+set folder = ~/.cache/mail/infnna
+mailboxes "=Sent" "=Drafts" "=Trash" "=INBOX"
+set mbox_type = Maildir
+set spoolfile= +INBOX
 set record = +Sent
 set trash = +Trash
 set postponed = +Drafts
-unset imap_passive
-set imap_keepalive = 300
-set mail_check = 120
-set header_cache = ~/.cache/neomutt/
-set message_cachedir = ~/.cache/neomutt
-#set imap_check_subscribed = yes
-mailboxes = +INBOX
 set sleep_time = 0            # speed up folders switch
 
-#smtp
-set smtp_url=smtp://$imap_user@mbox.na.infn.it:587
-set smtp_pass = $imap_pass
+# smtp
+set smtp_url=smtp://tortone@mbox.na.infn.it:587
+set smtp_pass = `pass show imap-qz.na.infn.it`
 set ssl_starttls = yes
 set ssl_force_tls = yes
 
-#theme
+# theme
 source ~/.config/neomutt/colors-gruvbox-shuber.muttrc
 source ~/.config/neomutt/colors-gruvbox-shuber-extended.muttrc
 source ~/.config/neomutt/gruvbox-powerline.neomuttrc
 source ~/.config/neomutt/powerline.neomuttrc
 
-#keybindings
-
-# General rebindings
+# general rebindings
+bind index,pager g noop
+bind index,pager M noop
+bind index,pager C noop
 bind attach <return> view-mailcap
 bind attach l view-mailcap
 bind editor <space> noop
-bind index,pager c imap-fetch-mail
 bind index G last-entry
 bind index g noop
 bind index gg first-entry
@@ -83,7 +78,7 @@ bind index \031 previous-undeleted	# Mouse wheel
 bind index \005 next-undeleted		# Mouse wheel
 bind pager \031 previous-line		# Mouse wheel
 bind pager \005 next-line		# Mouse wheel
-bind editor <Tab> complete-query
+bind editor <tab> complete-query
 
 # sidebar mappings
 bind index,pager \Ck sidebar-prev
@@ -96,3 +91,25 @@ bind index,pager B sidebar-toggle-visible
 # global index and pager shortcuts
 bind index,pager D purge-message
 bind index <tab> sync-mailbox
+
+# macro
+macro index,pager a "|abook --add-email\n" 'add sender to abook'
+macro index,pager A "|abook --add-email-quiet\n" "add sender to abook (quite)"
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+macro index c "<shell-escape>mbsync -q inbox-sent<enter>" "run mailsync"
+macro index,pager gi "<change-folder>=INBOX<enter>" "go to inbox"
+macro index,pager gs "<change-folder>=Sent<enter>" "go to sent"
+macro index,pager gt "<change-folder>=Trash<enter>" "go to trash"
+macro index,pager gj "<change-folder>=PMX<enter>" "go to junk"
+macro index,pager Mi "<save-message>=INBOX<enter>" "move mail to inbox"
+macro index,pager Ms "<save-message>=Sent<enter>" "move mail to sent"
+macro index,pager Mt "<save-message>=Trash<enter>" "move mail to trash"
+macro index,pager Mj "<save-message>=PMX<enter>" "move mail to junk"
+macro index,pager Ci "<copy-message>=INBOX<enter>" "copy mail to inbox"
+macro index,pager Cs "<copy-message>=Sent<enter>" "copy mail to sent"
+macro index,pager Ct "<copy-message>=Trash<enter>" "copy mail to trash"
+macro index,pager Cj "<copy-message>=PMX<enter>" "copy mail to junk"
+macro index \Cn "<untag-pattern>~A<enter><limit>all\n" "untag and show all messages"
+macro index \Ca "<tag-pattern>~A<enter>"
+# '/' performs a notmuch query, showing only the results
+macro index / "<enter-command>unset wait_key<enter><shell-escape>read -p 'notmuch query: ' x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;chomp@a;s/\^id:// for@a;$,=\"|\";print@a'\`\"<enter>" "show only messages matching a notmuch pattern"

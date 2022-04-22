@@ -1,0 +1,10 @@
+[Unit]
+Description=Mailbox synchronization service (INBOX/Sent folders)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mbsync -q inbox-sent
+ExecStartPost=/usr/bin/notmuch new
+
+[Install]
+WantedBy=default.target

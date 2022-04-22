@@ -58,8 +58,9 @@ prompt spaceship
 
 export EDITOR=vim
 
-# fuzzy finder
-### [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# zsh suggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+bindkey '^[s' autosuggest-accept
 
 # bat
 alias cat='bat -Pp --theme=ansi --color=always'

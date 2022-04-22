@@ -1,0 +1,49 @@
+IMAPAccount infnna
+Host imap-qz.na.infn.it
+Port 993
+User tortone
+PassCmd "pass show imap-qz.na.infn.it | head -n 1"
+SSLType IMAPS
+SSLVersion TLSv1.2
+
+IMAPStore infnna-remote
+Account infnna
+
+MaildirStore infnna-local
+Subfolders Verbatim
+Path ~/.cache/mail/infnna/
+Inbox ~/.cache/mail/infnna/INBOX
+
+Channel infnna-inbox
+Far :infnna-remote:
+Near :infnna-local:
+Patterns INBOX
+Create Far
+Sync All
+Expunge Both
+SyncState *
+
+Channel infnna-sent
+Far :infnna-remote:
+Near :infnna-local:
+Patterns Sent
+Create Far
+Sync All
+Expunge Both
+SyncState *
+
+Channel infnna-all
+Far :infnna-remote:
+Near :infnna-local:
+Patterns *
+Create Both
+Sync All
+Expunge Both
+SyncState *
+
+Group inbox-sent
+Channel infnna-inbox
+Channel infnna-sent
+
+Group all-folders
+Channel infnna-all

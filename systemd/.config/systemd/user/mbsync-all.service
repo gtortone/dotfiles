@@ -1,0 +1,9 @@
+[Unit]
+Description=Mailbox synchronization service (ALL folders)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mbsync -q all-folders
+
+[Install]
+WantedBy=default.target

@@ -28,8 +28,7 @@ let &t_SI = "\e[5 q"
 let &t_EI = "\e[1 q"
 
 " toggle hybrid line numbers
-"set number relativenumber
-set nu
+set number relativenumber
 
 " disable arrow keys
 "noremap <Up> <NOP>
