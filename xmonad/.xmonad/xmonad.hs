@@ -100,6 +100,7 @@ myManageHook = composeAll
     , className =? "VirtualBox Manager"  --> doFloat
     , className =? "Skype"               --> doShift " 5 "
     , className =? "zoom"                --> doShift " 5 "
+    , className =? "Screenkey"           --> doFloat
     , isDialog                           --> doFloat
     , isFullscreen                       --> (doF W.focusDown <+> doFullFloat)
     --, isFullscreen                                --> doFullFloat

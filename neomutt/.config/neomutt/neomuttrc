@@ -96,7 +96,7 @@ bind index <tab> sync-mailbox
 macro index,pager a "|abook --add-email\n" 'add sender to abook'
 macro index,pager A "|abook --add-email-quiet\n" "add sender to abook (quite)"
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
-macro index c "<shell-escape>mbsync -q inbox-sent<enter>" "run mailsync"
+macro index c "<shell-escape>mbsync -V inbox-sent<enter>" "run mailsync"
 macro index,pager gi "<change-folder>=INBOX<enter>" "go to inbox"
 macro index,pager gs "<change-folder>=Sent<enter>" "go to sent"
 macro index,pager gt "<change-folder>=Trash<enter>" "go to trash"
