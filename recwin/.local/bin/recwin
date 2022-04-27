@@ -1,4 +1,5 @@
 #!/bin/bash
 # ffmpeg parameters optimized for WhatsApp
-geometry=$(slop -f "-video_size %wx%h -i :0.0+%x,%y")
+echo "select window to record"
+geometry=$(slop -q -f "-video_size %wx%h -i :0.0+%x,%y")
 ffmpeg -f x11grab -framerate 30 $geometry -c:v libx264 -profile:v baseline -level 3.0 -pix_fmt yuv420p -vf "crop=trunc(iw/2)*2:trunc(ih/2)*2" "$1"
