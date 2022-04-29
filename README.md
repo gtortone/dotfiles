@@ -19,7 +19,7 @@ Arch Linux (April 2022)
 - bluetooth: **blueman-applet**
 - keyring daemon: **gnome-keyring-daemon**
 - keybind utility: **xbindkeys**
-- clipboard manager: **greenclip**
+- clipboard manager: **greenclip** / **autocutsel**
 
 ### Applications
 
