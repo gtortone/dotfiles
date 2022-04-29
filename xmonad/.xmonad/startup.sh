@@ -36,6 +36,12 @@ if [ -z "$(pgrep greenclip)" ] ; then
    greenclip daemon &
 fi
 
+# autocutsel
+if [ -z "$(pgrep autocutsel)" ] ; then
+   autocutsel -fork &
+   autocutsel -selection PRIMARY -fork &
+fi
+
 # Network Applet
 if [ -z "$(pgrep nm-applet)" ] ; then
     nm-applet &
