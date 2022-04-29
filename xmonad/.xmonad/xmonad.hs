@@ -39,6 +39,7 @@ import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig
 import XMonad.Util.Cursor
 import XMonad.Util.NamedScratchpad
+import XMonad.Util.WorkspaceCompare (getSortByXineramaRule)
 
 import Graphics.X11.ExtraTypes.XF86
 import qualified XMonad.StackSet as W
@@ -66,8 +67,7 @@ myLauncher = "dmenu_run"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = [" 1 "," 2 "," 3 "," 4 ", " 5 "]
-
+myWorkspaces = ["A", "B", "C", "D", "E"]
 
 ------------------------------------------------------------------------
 -- Window rules
@@ -98,8 +98,8 @@ myManageHook = composeAll
     , className =? "Pavucontrol"     --> doCenterFloat
     , className =? "cpupower-gui"    --> doCenterFloat
     , className =? "VirtualBox Manager"  --> doFloat
-    , className =? "Skype"               --> doShift " 5 "
-    , className =? "zoom"                --> doShift " 5 "
+    , className =? "Skype"               --> doShift "0_E"
+    , className =? "zoom"                --> doShift "0_E"
     , className =? "Screenkey"           --> doFloat
     , isDialog                           --> doFloat
     , isFullscreen                       --> (doF W.focusDown <+> doFullFloat)
@@ -390,9 +390,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- mod-[1..9], Switch to workspace N
   -- mod-shift-[1..9], Move client to workspace N
-  [((m .|. modMask, k), windows $ f i)
-      | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-      , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
+  [((modMask .|. e, k), windows $ onCurrentScreen f i)
+      | (i, k) <- zip (workspaces' conf) [xK_1 .. xK_9]
+      , (f, e) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
   ++
 
   -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2 or 3
@@ -505,6 +505,7 @@ myStartupHook = do
 --
 main = do
   n <- countScreens
+  nScreens <- countScreens
   xmprocs <- mapM (\i -> spawnPipe $ "xmobar ~/.xmonad/xmobar-" ++ show i ++ ".hs" ++ " -x " ++ show i) [0..n-1]
   xmonad $ ewmh $ docks
          $ withNavigation2DConfig myNav2DConf
@@ -517,11 +518,12 @@ main = do
          $ defaults {
          logHook = mapM_ (\handle -> dynamicLogWithPP xmobarPP { 
             ppOutput = System.IO.hPutStrLn handle
+            , ppSort    = getSortByXineramaRule
             , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor "" . wrap "[" "]"
             , ppTitle = xmobarColor xmobarTitleColor "" . shorten 50
-            , ppSep = "   "
          }) xmprocs
-         >> updatePointer (0.75, 0.75) (0.75, 0.75)
+         >> updatePointer (0.75, 0.75) (0.75, 0.75),
+         workspaces         = withScreens nScreens myWorkspaces
       }
 ------------------------------------------------------------------------
 -- Combine it all together
@@ -537,7 +539,6 @@ defaults = def {
     focusFollowsMouse  = myFocusFollowsMouse,
     borderWidth        = myBorderWidth,
     modMask            = myModMask,
-    workspaces         = myWorkspaces,
     normalBorderColor  = myNormalBorderColor,
     focusedBorderColor = myFocusedBorderColor,
 
