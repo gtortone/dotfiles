@@ -8,20 +8,16 @@ colorscheme ayu
 " vim-airline/vim-airline plugin
 let g:airline_powerline_fonts = 1
 let g:airline_theme='term'
-
-" preservim/nerdtree plugin
-nnoremap <C-t> :NERDTreeToggle<CR>
-" nnoremap <C-f> :NERDTreeFind<CR>
-
-" tabs navigation
-map <C-k> :tabn<CR>
-map <C-j> :tabp<CR>
-map <C-n> :tabnew<CR>
+let g:airline#extensions#tabline#enabled = 1
 
 " disable default bar and info
 set noshowmode       " to get rid of thing like --INSERT--
 set noshowcmd        " to get rid of display of last command
 set shortmess+=F     " to get rid of the file name displayed in the command line bar
+
+" bufferline plugin
+let g:bufferline_echo = 0
+set showtabline=0
 
 " change cursor between modes
 let &t_SI = "\e[5 q"
