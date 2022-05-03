@@ -12,6 +12,9 @@ ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="true"
 zstyle ':omz:update' mode disabled  # disable automatic updates
 
+# automatically rehash
+zstyle ':completion:*' rehash true
+
 plugins=(sudo fzf)
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
