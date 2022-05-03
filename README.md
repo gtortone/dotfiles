@@ -36,7 +36,7 @@ Arch Linux (April 2022)
 - File browsing: **vifm** / **pcmanfm**
 - Image viewer: **sxiv** / **viewnior**
 - Video player: **vlc** / **mpv**
-- Screencast: **ffmpeg** / **slop**
+- Screencast: **ffmpeg** / **slop** / **screenkey**
 - Audio mixer: **pulsemixer** / **pavucontrol**
 - Launcher: **dmenu** / **rofi**
 - Screenshot: **maim**
