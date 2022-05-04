@@ -63,6 +63,9 @@ xautolock -time 15 -locker slock &
 # volume-control
 $HOME/.xmonad/volume-control.sh
 
+# caps display
+$HOME/.xmonad/caps-status.sh
+
 # SSH agent
 eval $(gnome-keyring-daemon -s)
 export SSH_AUTH_SOCK

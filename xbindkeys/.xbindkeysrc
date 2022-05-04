@@ -55,3 +55,8 @@
 "autorandr --load docked"
     m:0xc + c:11
     Control+Alt + 2
+
+# get caps lock status
+"~/.xmonad/caps-status.sh"
+    m:0x2 + c:66
+    Caps_Lock

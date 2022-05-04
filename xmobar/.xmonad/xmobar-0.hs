@@ -58,8 +58,9 @@ Config {
                     , Run Com "cat" ["/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"] "governor" 600
                     , Run StdinReader
                     , Run PipeReader "/var/run/user/1000/volume-display" "volume"
+                    , Run PipeReader "/var/run/user/1000/caps-display" "caps"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %multicpu% | %coretemp% | %memory% | %battery% | %dynnetwork% | <action=`gsimplecal`>%date%</action> | <action=`pavucontrol`>%volume%</action> | <action=`cpupower-gui`>%governor%</action> |   "   -- #69DFFA
+       , template = "%StdinReader% }{ %multicpu% | %coretemp% | %memory% | %battery% | %dynnetwork% | <action=`gsimplecal`>%date%</action> | <action=`pavucontrol`>%volume%</action> | <action=`cpupower-gui`>%governor%</action> | %caps%   "   -- #69DFFA
 }
