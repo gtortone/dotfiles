@@ -14,8 +14,10 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.EwmhDesktops
 
+import XMonad.Layout.LayoutModifier
 import XMonad.Layout.Gaps
-import XMonad.Layout.Grid
+import XMonad.Layout.GridVariants (Grid(Grid))
+import XMonad.Layout.SimplestFloat
 import XMonad.Layout.Fullscreen
 import XMonad.Layout.BinarySpacePartition as BSP
 import XMonad.Layout.NoBorders
@@ -26,11 +28,14 @@ import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.NoFrillsDecoration
 import XMonad.Layout.PerWorkspace
+import XMonad.Layout.ResizableTile
+import XMonad.Layout.LimitWindows (limitWindows, increaseLimit, decreaseLimit)
 import XMonad.Layout.Reflect
 import XMonad.Layout.Renamed
 import XMonad.Layout.ShowWName
 import XMonad.Layout.Simplest
 import XMonad.Layout.SubLayouts
+import XMonad.Layout.ThreeColumns
 import XMonad.Layout.WindowNavigation
 import XMonad.Layout.ZoomRow
 import XMonad.Layout.IndependentScreens
@@ -136,32 +141,60 @@ myScratchPads = [ NS "calculator" spawnCalc findCalc manageCalc
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 
-outerGaps    = 5 
-myGaps       = gaps [(U, outerGaps), (R, outerGaps), (L, outerGaps), (D, outerGaps)]
-addSpace     = renamed [CutWordsLeft 2] . spacing gap
-tab          = avoidStruts
-               $ renamed [Replace "Tabbed"]
+outerGaps = 5 
+tabGaps = gaps [(U, 8), (R, 8), (L, 8), (D, 8)]
+mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
+
+tab          = renamed [Replace "tabs"]
                $ addTopBar
-               $ myGaps
+               $ tabGaps
                $ tabbed shrinkText myTabTheme
 
-layouts      = avoidStruts (
-                (
-                  renamed [CutWordsLeft 1]
-                  $ addTopBar
-                  $ windowNavigation
-                  $ renamed [Replace "BSP"]
-                  $ addTabs shrinkText myTabTheme
-                  $ subLayout [] Simplest
-                  $ myGaps
-                  $ addSpace (BSP.emptyBSP)
-                )
-                ||| tab 
-               )
+bsp          = renamed [CutWordsLeft 1]
+               $ addTopBar
+               $ windowNavigation
+               $ renamed [Replace "bsp"]
+               $ addTabs shrinkText myTabTheme
+               $ subLayout [] Simplest
+               $ mySpacing outerGaps (BSP.emptyBSP)
 
-myLayout    = smartBorders
-             $ mkToggle (NOBORDERS ?? FULL ?? EOT)
-             $ layouts
+tall         = renamed [Replace "tall"]
+               $ addTopBar
+               $ windowNavigation
+               $ addTabs shrinkText myTabTheme
+               $ subLayout [] Simplest
+               $ limitWindows 8
+               $ mySpacing outerGaps
+               $ ResizableTall 1 (3/100) (1/2) []
+
+grid         = renamed [Replace "grid"]
+               $ addTopBar
+               $ windowNavigation
+               $ addTabs shrinkText myTabTheme
+               $ subLayout [] Simplest
+               $ limitWindows 8
+               $ mySpacing outerGaps
+               $ mkToggle (single MIRROR)
+               $ Grid (16/10)
+
+floats       = renamed [Replace "floats"]
+               $ limitWindows 20 simplestFloat
+
+threecol     = renamed [Replace "threecol"]
+               $ addTopBar
+               $ windowNavigation
+               $ addTabs shrinkText myTabTheme
+               $ subLayout [] Simplest
+               $ limitWindows 7
+               $ mySpacing outerGaps
+               $ ThreeCol 1 (3/100) (1/2)
+
+layouts      = bsp ||| tab ||| tall ||| grid ||| threecol ||| floats
+
+myLayout     = avoidStruts $ smartBorders
+               $ mkToggle (NOBORDERS ?? FULL ?? EOT)
+               $ layouts
 
 myNav2DConf = def
     { defaultTiledNavigation    = centerNavigation
@@ -500,6 +533,9 @@ myStartupHook = do
   setDefaultCursor xC_left_ptr
 --  setWMName "LG3D"
 
+windowCount :: X (Maybe String)
+windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
+
 ------------------------------------------------------------------------
 -- Run xmonad with all the defaults we set up.
 --
@@ -521,6 +557,8 @@ main = do
             , ppSort    = getSortByXineramaRule
             , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor "" . wrap "[" "]"
             , ppTitle = xmobarColor xmobarTitleColor "" . shorten 50
+            , ppExtras = [windowCount]
+            , ppOrder = \(ws:l:t:ex) -> [ws,l]++ex++[t]
          }) xmprocs
          >> updatePointer (0.75, 0.75) (0.75, 0.75),
          workspaces         = withScreens nScreens myWorkspaces
