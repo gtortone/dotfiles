@@ -1,5 +1,5 @@
 #!/bin/bash
 
 setxkbmap us
-pacmd set-default-sink 1
+pacmd set-default-sink 2
 notify-send -i display "Display profile" "$AUTORANDR_CURRENT_PROFILE"
