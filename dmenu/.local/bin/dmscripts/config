@@ -75,4 +75,8 @@ websearch[amazon]="https://www.amazon.com/s?k="
 websearch[github]="https://github.com/search?q="
 websearch[stackoverflow]="https://stackoverflow.com/search?q="
 
+declare -A radio_stations
+radio_stations[Lofi radio]="https://zeno.fm/radio/lofi-radio70w6zac9hfhvv"
+radio_stations[Lofi Hip Hop radio]="https://zeno.fm/radio/lofi-radio70w6zac9hfhvv"
+
 _revision=22
