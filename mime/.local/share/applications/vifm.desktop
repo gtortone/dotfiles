@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=vifm
+TryExec=/usr/bin/vifm
+Exec=alacritty -e /usr/bin/vifm %f
+Terminal=true
+NoDisplay=true
+MimeType=application/x-compressed-tar;application/zip;application/vnd.rar;application/x-bzip-compressed-tar;application/gzip;application/x-tar;application/x-xz-compressed-tar;application/x-7z-compressed;application/x-cd-image

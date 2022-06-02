@@ -1,5 +1,5 @@
 [Default Applications]
-aaaa=aa.desktop;
+application/gzip=vifm.desktop;
 application/mpeg4-iod=vlc.desktop;
 application/mpeg4-muxcodetable=vlc.desktop;
 application/mxf=vlc.desktop;
@@ -10,9 +10,13 @@ application/sdp=vlc.desktop;
 application/vnd.apple.mpegurl=vlc.desktop;
 application/vnd.ms-asf=vlc.desktop;
 application/vnd.ms-wpl=vlc.desktop;
+application/vnd.rar=vifm.desktop;
 application/vnd.rn-realmedia=vlc.desktop;
 application/vnd.rn-realmedia-vbr=vlc.desktop;
-application/x-cd-image=vlc.desktop;
+application/x-7z-compressed=vifm.desktop;
+application/x-bzip-compressed-tar=vifm.desktop;
+application/x-cd-image=vifm.desktop;vlc.desktop;
+application/x-compressed-tar=vifm.desktop;
 application/x-extension-m4a=vlc.desktop;
 application/x-extension-mp4=vlc.desktop;
 application/x-flac=vlc.desktop;
@@ -23,9 +27,12 @@ application/x-quicktime-media-link=vlc.desktop;
 application/x-quicktimeplayer=vlc.desktop;
 application/x-shellscript=vim.desktop;
 application/x-shockwave-flash=vlc.desktop;
+application/x-tar=vifm.desktop;
+application/x-xz-compressed-tar=vifm.desktop;
 application/xhtml+xml=qutebrowser.desktop;
 application/xml=qutebrowser.desktop;
 application/xspf+xml=vlc.desktop;
+application/zip=vifm.desktop;
 audio/3gpp=vlc.desktop;
 audio/3gpp2=vlc.desktop;
 audio/AMR=vlc.desktop;
@@ -198,7 +205,4 @@ x-scheme-handler/qute=qutebrowser.desktop;
 x-scheme-handler/rtmp=vlc.desktop;
 x-scheme-handler/rtp=vlc.desktop;
 x-scheme-handler/rtsp=vlc.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-BYATK1.desktop
-
-[Added Associations]
-x-scheme-handler/tg=userapp-Telegram Desktop-BYATK1.desktop;
+x-scheme-handler/tg=telegram.desktop;
