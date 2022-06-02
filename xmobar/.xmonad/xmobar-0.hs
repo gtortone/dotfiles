@@ -4,7 +4,7 @@ Config {
        , allDesktops = False
        , bgColor = "#282c34"
        , fgColor = "#bbc2cf"
-       , position = TopSize L 93 24
+       , position = TopSize L 90 24
        , commands = [ 
                     Run MultiCpu [ "-t", "<fc=#a9a1e1><fn=1></fn></fc> <total>%"
                               , "--Low","10"

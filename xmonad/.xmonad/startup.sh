@@ -15,7 +15,7 @@ if [ -z "$(pgrep trayer)" ] ; then
            --height 24 \
            --alpha 0 \
            --transparent false\
-           --width 8 \
+           --width 10 \
            --tint 0x282c34 \
            --monitor primary &
 fi

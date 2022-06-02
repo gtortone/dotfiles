@@ -102,7 +102,7 @@ myManageHook = composeAll
     , className =? "MPlayer"         --> doCenterFloat
     , className =? "Pavucontrol"     --> doCenterFloat
     , className =? "cpupower-gui"    --> doCenterFloat
-    , className =? "VirtualBox Manager"  --> doFloat
+    -- , className =? "VirtualBox Manager"  --> doFloat
     , className =? "Skype"               --> doShift "0_E"
     , className =? "zoom"                --> doShift "0_E"
     , className =? "Screenkey"           --> doFloat
@@ -122,7 +122,7 @@ myScratchPads = [ NS "calculator" spawnCalc findCalc manageCalc
                 ]
   where
     spawnCalc  = "mate-calc"
-    findCalc   = className =? "mate-calc"
+    findCalc   = className =? "Calculator"
     manageCalc = customFloating $ W.RationalRect l t w h
                where
                  h = 0.3
