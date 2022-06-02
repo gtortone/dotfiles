@@ -216,6 +216,9 @@ filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
        \ tar -xf %c,
 fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zip -sf %c
 
+" Extract .gz files
+filetype *.gz gunzip %f
+
 " ArchiveMount
 filetype {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz,*.tar.zst,*.tzst},
         \<application/x-tar>
