@@ -5,7 +5,7 @@ alias pine='/usr/bin/alpine'
 alias telnet='/usr/bin/telnet-ssl'
 
 # SSH agent
-eval $(gnome-keyring-daemon -s)
+eval $(gnome-keyring-daemon -s 2>/dev/null)
 export SSH_AUTH_SOCK
 
 # ROOT environment
