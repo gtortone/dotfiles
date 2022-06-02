@@ -13,3 +13,5 @@ ds/elog https://darkside-ui.na.infn.it:44300/elog/ds-napoli
 ds/runviewer https://darkside-ui.na.infn.it:44300/runviewer
 ds/pdu01 https://darkside-pdu01/login.html?ErrorCode=0
 b2/grafana http://b2ecl.na.infn.it:7778
+eos/pdu01 http://pdueos1.na.infn.it
+eos/pdu02 http://pdueos2.na.infn.it
