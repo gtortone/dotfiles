@@ -15,6 +15,7 @@ Arch Linux (April 2022)
 - wallpaper manager: **feh**
 - screensaver: **slock** / **xautolock**
 - display manager: **autorandr**
+- multimedia framework: **pipewire** / **wireplumber**
 - network: **nm-applet**
 - bluetooth: **blueman-applet**
 - keyring daemon: **gnome-keyring-daemon**
