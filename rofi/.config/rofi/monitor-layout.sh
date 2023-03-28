@@ -54,7 +54,7 @@ do
         then
             TILES[$index]="Dual Screen ${MONITORS[$entry_a]} -> ${MONITORS[$entry_b]}"
             COMMANDS[$index]="xrandr --output ${MONITORS[$entry_a]} --auto \
-                              --output ${MONITORS[$entry_b]} --auto --left-of ${MONITORS[$entry_a]}"
+                              --output ${MONITORS[$entry_b]} --auto --right-of ${MONITORS[$entry_a]}"
 
             index+=1
         fi
@@ -93,7 +93,7 @@ function gen_entries()
 }
 
 # Call menu
-SEL=$( gen_entries | rofi -dmenu -p "Monitor Setup:" -a 0 -no-custom  | awk '{print $1}' )
+SEL=$( gen_entries | rofi -dmenu -p "Monitor Setup" -a 0 -no-custom  | awk '{print $1}' )
 
 # Call xrandr
 $( ${COMMANDS[$SEL]} )

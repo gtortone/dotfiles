@@ -2,52 +2,46 @@
 
 rofi_command="rofi -format i"
 
+sshot="Screenshot\0icon\x1fcamera"
 clip="Clipboard\0icon\x1fnotes"
 sink="Select audio out\0icon\x1fspeaker"
-source="Select audio in\0icon\x1fspeaker"
-mount="Mount/umount device\0icon\x1fdrive-harddisk-usb"
+source="Select audio in\0icon\x1faudio-input-microphone-symbolic"
 monitor="Monitor layout\0icon\x1fmonitor"
-kit="Set keyboard it\0icon\x1fkeyboard"
-kus="Set keyboard us\0icon\x1fkeyboard"
 browse="Browse home directory\0icon\x1ffolder"
-sshot="Take a screenshot\0icon\x1fcamera"
-cal="Calendar\0icon\x1fdate"
-perf="Change CPU governor\0icon\x1fcomputer"
+shut="Reboot or shutdown\0icon\x1fsystem-shutdown"
+radio="Radio player\0icon\x1fradio"
+wall="Set wallpaper\0icon\x1fimage"
 
-options="$clip\n$sink\n$source\n$mount\n$monitor\n$kit\n$kus\n$browse\n$sshot\n$cal\n$perf\n"
+options="  $sshot\n  $clip\n  $sink\n  $source\n  $monitor\n  $browse\n  $shut\n  $radio\n  $wall"
 
-chosen="$(echo -e "$options" | $rofi_command -p "Run: " -dmenu -selected-row 0)"
+chosen="$(echo -e "$options" | $rofi_command -p "Run" -dmenu -selected-row 0)"
 case $chosen in
     0)
-        rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+        /home/tortone/.config/rofi/sshot.sh &
         ;;
     1)
-      /home/tortone/.config/rofi/rofi-pulse.sh sink &
+        rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
         ;;
     2)
-      /home/tortone/.config/rofi/rofi-pulse.sh source &
+        /home/tortone/.config/rofi/rofi-pulse.sh sink &
         ;;
     3)
-      /home/tortone/.config/rofi/mountusb.sh &
+        /home/tortone/.config/rofi/rofi-pulse.sh source &
         ;;
-    4) /home/tortone/.config/rofi/monitor-layout.sh &
+    4) 
+        /home/tortone/.config/rofi/monitor-layout.sh &
         ;;
     5)
-      /usr/bin/setxkbmap -synch it &
+        pcmanfm $HOME &
         ;;
-    6) 
-      /usr/bin/setxkbmap -synch us &
-        ;;   
+    6)
+        /home/tortone/.config/rofi/shutdown.sh &
+        ;;
     7)
-      pcmanfm $HOME &
+        /home/tortone/.config/rofi/radio.sh &
         ;;
     8)
-      maim -s | xclip -selection clipboard -target image/png 
+        /home/tortone/.config/rofi/setbg.sh &
         ;;
-    9)
-      gsimplecal &
-        ;;
-    10)
-      cpupower-gui &
-        ;;
+
 esac
