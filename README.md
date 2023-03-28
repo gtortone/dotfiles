@@ -4,7 +4,7 @@
 
 ### Linux distribution
 
-Arch Linux (April 2022)
+Arch Linux (April 2023)
 
 ### Window manager components
 
