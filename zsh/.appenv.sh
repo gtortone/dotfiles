@@ -13,10 +13,10 @@ export ROOTSYS="/opt/root"
 export PATH="${PATH}:${ROOTSYS}/bin"
 
 # EPICS environment
-export EPICS_BASE="/opt/epics/base"
-export EPICS_HOST_ARCH=`$EPICS_BASE/startup/EpicsHostArch.pl`
-export PATH="${PATH}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${EPICS_BASE}/lib/${EPICS_HOST_ARCH}"
+##export EPICS_BASE="/opt/epics/base"
+##export EPICS_HOST_ARCH=`$EPICS_BASE/startup/EpicsHostArch.pl`
+##export PATH="${PATH}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}"
+##export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${EPICS_BASE}/lib/${EPICS_HOST_ARCH}"
 ## export PYEPICS_LIBCA=$EPICS_BASE/lib/linux-x86_64/libca.so
 
 #source /home/tortone/devel/Fazia/Ganil/v201603-17-jessie/narval.sh
@@ -41,6 +41,16 @@ setup-vivado-2019.2() {
    alias vivado='source /opt/Xilinx/Vivado/2019.2/settings64.sh; export LC_NUMERIC=en_US.UTF-8; vivado -nolog -nojournal'
    alias vitis='source /opt/Xilinx/Vitis/2019.2/settings64.sh ; export SWT_GTK3=0 ; export GTK2_RC_FILES=0 ; vitis'
 }
+
+# Vivado 2020.2
+setup-vivado-2020.2() {
+   source /opt/Xilinx/Vivado/2020.2/settings64.sh
+   source /opt/Xilinx/Vitis_HLS/2020.2/settings64.sh
+   export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
+   alias vivado='source /opt/Xilinx/Vivado/2020.2/settings64.sh; export LC_NUMERIC=en_US.UTF-8; vivado -nolog -nojournal'
+   alias vitis='source /opt/Xilinx/Vitis_HLS/2020.2/settings64.sh ; export SWT_GTK3=0 ; export GTK2_RC_FILES=0 ; vitis'
+}
+
 
 # NGINX
 ## alias nginx='sudo /opt/nginx/sbin/nginx'
