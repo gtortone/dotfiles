@@ -1,6 +1,6 @@
 # dotfiles
 
-![Neofetch](distro.png)
+![Neofetch](neofetch.png)
 
 ### Linux distribution
 
