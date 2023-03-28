@@ -229,7 +229,7 @@ c.fileselect.folder.command = ['alacritty', '-e', 'vifm', '--choose-dir={}']
 # Automatically enter insert mode if an editable element is focused
 # after loading the page.
 # Type: Bool
-c.input.insert_mode.auto_load = False
+c.input.insert_mode.auto_load = True
 
 # Leave insert mode if a non-editable element is clicked.
 # Type: Bool
@@ -251,7 +251,7 @@ c.scrolling.bar = 'overlay'
 # Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 # for a blank page.
 # Type: FuzzyUrl
-c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = 'https://web.tabliss.io'
 
 # URL segments where `:navigate increment/decrement` will search for a
 # number.
@@ -287,7 +287,7 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'gg': 'https:/
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = 'https://start.duckduckgo.com/'
+c.url.start_pages = 'https://web.tabliss.io'
 
 # Background color of a warning message.
 # Type: QssColor
@@ -309,14 +309,14 @@ c.colors.webpage.preferred_color_scheme = 'dark'
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
 # Type: List of Font, or Font
-c.fonts.default_family = 'Fira Mono'
+c.fonts.default_family = 'DejaVu Sans Mono Nerd'
 
 # Default font size to use. Whenever "default_size" is used in a font
 # setting, it's replaced with the size listed here. Valid values are
 # either a float value with a "pt" suffix, or an integer value with a
 # "px" suffix.
 # Type: String
-c.fonts.default_size = '10pt'
+c.fonts.default_size = '11pt'
 
 # Font used for the context menu. If set to null, the Qt default is
 # used.
