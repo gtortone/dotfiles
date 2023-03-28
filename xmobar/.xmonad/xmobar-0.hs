@@ -1,10 +1,10 @@
 Config {
-       font = "xft:JetBrainsMonoNerdFontMono:size=12:bold:antialias=true"
-       , additionalFonts = [ "xft:FontAwesome:size=12:normal:antialias=true" ]
+       font = "JetBrainsMonoNerdFontMono semibold 12"
+       , additionalFonts = [ "FontAwesome 12" ]
        , allDesktops = False
        , bgColor = "#282c34"
        , fgColor = "#bbc2cf"
-       , position = TopSize L 90 24
+       , position = TopSize L 90 26
        , commands = [ 
                     Run MultiCpu [ "-t", "<fc=#a9a1e1><fn=1></fn></fc> <total>%"
                               , "--Low","10"
