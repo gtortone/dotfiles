@@ -4,14 +4,13 @@
 
 ### Linux distribution
 
-Arch Linux (April 2022)
+Arch Linux (April 2023)
 
 ### Window manager components
 
-- window manager: **xmonad**
-- status bar: **xmobar**
+- window manager: **i3**
+- status bar: **polybar**
 - notification daemon: **dunst**		
-- systray application: **trayer**
 - wallpaper manager: **feh**
 - screensaver: **slock** / **xautolock**
 - display manager: **autorandr**
@@ -41,8 +40,8 @@ Arch Linux (April 2022)
 - Audio mixer: **pulsemixer** / **pavucontrol**
 - Launcher: **dmenu** / **rofi**
 - Screenshot: **maim**
-- Calendar: **gsimplecal**
-- CPU frequency manager: **cpupower-gui**
+- Calendar: **gcal**
+- CPU frequency manager: **cpupower**
 - Keyboard layout: **setxkbmap**
 - Audio CLI: **ponymix**
 - Touchpad config: **xinput**
@@ -82,15 +81,12 @@ Arch Linux (April 2022)
 	
 ### Keys binding configuration
 	
-- capture keys: ```xbindkeys -k```
+- capture keys: ```xbindkeys -km```
 	
 ### Keys combo
 
 - set mobile mode (LCD display): ```CTRL+ALT+1```
 - set docked mode (HDMI display): ```CTRL+ALT+2```
 - display dmenu: ```ALT+P```
-- display dmenu hub: ```ALT+O```
-- display launcher: ```ALT+SHIFT+L```
 - display rofi custom menu: ```ALT+SHIFT+P```
-- display rofi drun: ```ALT+SHIFT+A```
 
