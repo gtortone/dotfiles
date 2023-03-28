@@ -3,6 +3,7 @@
 rofi_command="rofi -format i"
 
 sshot="Screenshot\0icon\x1fcamera"
+calc="Calculator\0icon\x1faccessories-calculator"
 clip="Clipboard\0icon\x1fnotes"
 sink="Select audio out\0icon\x1fspeaker"
 source="Select audio in\0icon\x1faudio-input-microphone-symbolic"
@@ -12,7 +13,7 @@ shut="Reboot or shutdown\0icon\x1fsystem-shutdown"
 radio="Radio player\0icon\x1fradio"
 wall="Set wallpaper\0icon\x1fimage"
 
-options="  $sshot\n  $clip\n  $sink\n  $source\n  $monitor\n  $browse\n  $shut\n  $radio\n  $wall"
+options="  $sshot\n  $calc\n  $clip\n  $sink\n  $source\n  $monitor\n  $browse\n  $shut\n  $radio\n  $wall"
 
 chosen="$(echo -e "$options" | $rofi_command -p "Run" -dmenu -selected-row 0)"
 case $chosen in
@@ -20,27 +21,30 @@ case $chosen in
         /home/tortone/.config/rofi/sshot.sh &
         ;;
     1)
-        rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+        /usr/bin/mate-calculator &
         ;;
     2)
-        /home/tortone/.config/rofi/rofi-pulse.sh sink &
+        rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
         ;;
     3)
+        /home/tortone/.config/rofi/rofi-pulse.sh sink &
+        ;;
+    4)
         /home/tortone/.config/rofi/rofi-pulse.sh source &
         ;;
-    4) 
+    5) 
         /home/tortone/.config/rofi/monitor-layout.sh &
         ;;
-    5)
+    6)
         pcmanfm $HOME &
         ;;
-    6)
+    7)
         /home/tortone/.config/rofi/shutdown.sh &
         ;;
-    7)
+    8)
         /home/tortone/.config/rofi/radio.sh &
         ;;
-    8)
+    9)
         /home/tortone/.config/rofi/setbg.sh &
         ;;
 
