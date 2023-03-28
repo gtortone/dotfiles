@@ -52,6 +52,12 @@ import qualified Data.Map        as M
 import Data.List -- for `isSuffixOf`
 import Data.Ratio ((%))
 
+import qualified XMonad.StackSet as SS
+import Data.Monoid (All (All))
+import Foreign.C (CInt)
+import Control.Monad (when)
+import Data.Foldable (find)
+
 ------------------------------------------------------------------------
 -- Terminimport XMonad.Hooks.EwmhDesktopsal
 -- The preferred terminal program, which is used in a binding below and by
@@ -424,7 +430,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- mod-[1..9], Switch to workspace N
   -- mod-shift-[1..9], Move client to workspace N
   [((modMask .|. e, k), windows $ onCurrentScreen f i)
-      | (i, k) <- zip (workspaces' conf) [xK_1 .. xK_9]
+      | (i, k) <- zip (workspaces' conf) [xK_1 .. xK_5]
       , (f, e) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
   ++
 
@@ -520,6 +526,35 @@ myAppGrid = [
                  , ("Calc",         "mate-calc")
                  ]
 
+-- focus empty workspace on cursor hover
+
+multiScreenFocusHook :: Event -> X All
+multiScreenFocusHook MotionEvent { ev_x = x, ev_y = y } = do
+  ms <- getScreenForPos x y
+  case ms of
+    Just cursorScreen -> do
+      let cursorScreenID = SS.screen cursorScreen
+      focussedScreenID <- gets (SS.screen . SS.current . windowset)
+      when (cursorScreenID /= focussedScreenID) (focusWS $ SS.tag $ SS.workspace cursorScreen)
+      return (All True)
+    _ -> return (All True)
+  where getScreenForPos :: CInt -> CInt
+            -> X (Maybe (SS.Screen WorkspaceId (Layout Window) Window ScreenId ScreenDetail))
+        getScreenForPos x y = do
+          ws <- windowset <$> get
+          let screens = SS.current ws : SS.visible ws
+              inRects = map (inRect x y . screenRect . SS.screenDetail) screens
+          return $ fst <$> find snd (zip screens inRects)
+        inRect :: CInt -> CInt -> Rectangle -> Bool
+        inRect x y rect = let l = fromIntegral (rect_x rect)
+                              r = l + fromIntegral (rect_width rect)
+                              t = fromIntegral (rect_y rect)
+                              b = t + fromIntegral (rect_height rect)
+                           in x >= l && x < r && y >= t && y < b
+        focusWS :: WorkspaceId -> X ()
+        focusWS id = io (putStrLn $ "Focussing " ++ show id) >> windows (SS.view id)
+multiScreenFocusHook _ = return (All True)
+
 ------------------------------------------------------------------------
 -- Startup hook
 -- Perform an arbitrary action each time xmonad starts or is restarted
@@ -585,8 +620,9 @@ defaults = def {
     mouseBindings      = myMouseBindings,
 
     -- hooks, layouts
+    rootMask           = rootMask def .|. pointerMotionMask,
     layoutHook         = showWName' myShowWNameTheme $ myLayout,
-    handleEventHook    = XMonad.Hooks.EwmhDesktops.fullscreenEventHook,
+    handleEventHook    = XMonad.Hooks.EwmhDesktops.fullscreenEventHook <+> multiScreenFocusHook,
     manageHook         = manageDocks <+> myManageHook,
     startupHook        = myStartupHook
 }

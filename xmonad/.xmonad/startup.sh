@@ -12,9 +12,9 @@ if [ -z "$(pgrep trayer)" ] ; then
     trayer --edge top \
            --align right \
            --widthtype percent \
-           --height 24 \
-           --alpha 0 \
+           --height 26 \
            --transparent false\
+           --alpha 0\
            --width 10 \
            --tint 0x282c34 \
            --monitor primary &
@@ -37,10 +37,10 @@ if [ -z "$(pgrep greenclip)" ] ; then
 fi
 
 # autocutsel
-if [ -z "$(pgrep autocutsel)" ] ; then
-   autocutsel -fork &
-   autocutsel -selection PRIMARY -fork &
-fi
+#if [ -z "$(pgrep autocutsel)" ] ; then
+#   autocutsel -fork &
+#   autocutsel -selection PRIMARY -fork &
+#fi
 
 # Network Applet
 if [ -z "$(pgrep nm-applet)" ] ; then
@@ -48,17 +48,25 @@ if [ -z "$(pgrep nm-applet)" ] ; then
 fi
 
 # Dropbox
-if [ -z "$(pgrep dropbox)" ] ; then
-   dropbox start -i &
-fi
+#if [ -z "$(pgrep dropbox)" ] ; then
+#   dropbox start -i &
+#fi
 
 # Bluetooth
 if [ -z "$(pgrep blueman-applet)" ] ; then
    blueman-applet &
 fi
 
+# udiskie
+if [ -z "$(pgrep udiskie)" ] ; then
+   /usr/bin/udiskie -A -s &
+fi
+
 # slock (after 15 min inactivity)
 xautolock -time 15 -locker slock &
+
+# caffeine (suspend management)
+caffeine start &
 
 # volume-control
 $HOME/.xmonad/volume-control.sh
