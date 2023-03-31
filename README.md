@@ -45,14 +45,14 @@ Arch Linux (April 2023)
 - Keyboard layout: **setxkbmap**
 - Audio CLI: **ponymix**
 - Touchpad config: **xinput**
-- Display manager: **xrandr** / **autorandr** / **arandr**
+- Display manager: **xrandr** / **autorandr** / **arandr** / **mons**
 - Brightness control: **brightnessctl**
 - Dotfiles manager: **stow**
 
-### LightDM login manager
+### LXDM login manager
 
-- config file: ```/etc/lightdm/lightdm-gtk-greeter.conf```	
-- config utility: ```lightdm-gtk-greeter-settings```
+- config file: ```/etc/lxdm/lxdm.conf```
+- config utility: ```lxdm-config```
 	
 ### GTK configuration
 
