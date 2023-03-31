@@ -3,7 +3,8 @@
 ICON="<fn=1></fn>"
 MUTE_ICON="<fn=1></fn>"
 PIPE=$XDG_RUNTIME_DIR/volume-display
-[ -p "$PIPE" ] || mkfifo "$PIPE"
+# pipe for Xmonad
+#[ -p "$PIPE" ] || mkfifo "$PIPE"
 
 step=5
 
@@ -40,4 +41,5 @@ if [ $# -ne 0 ]; then
    notify-send -h string:x-canonical-private-synchronous:volume_percentage -h int:value:$current -t 1000 --app-name volume --icon $volicon "[ $current% ]"
 fi
 
-echo "$icon $current%" > "$PIPE"
+# pipe for Xmonad
+#echo "$icon $current%" > "$PIPE"

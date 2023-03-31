@@ -46,17 +46,13 @@
     m:0x0 + c:198
     XF86AudioMicMute
 
-# set mobile display (LCD monitor)
-"autorandr --load mobile"
+# set mobile display: LCD monitor
+"autorandr -l mobile"
     m:0xc + c:10
     Control+Alt + 1
 
-# set docked display (external monitor)
-"autorandr --load docked"
+# set docked display: HDMI1 (left) and DP2-1 (right)
+# fallback on clone connected outputs at the largest common resolution
+"autorandr -l docked || autorandr -l common"
     m:0xc + c:11
     Control+Alt + 2
-
-# get caps lock status
-"~/.xmonad/caps-status.sh"
-    m:0x2 + c:66
-    Caps_Lock
