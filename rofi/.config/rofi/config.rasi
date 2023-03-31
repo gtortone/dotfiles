@@ -1,7 +1,7 @@
 configuration {
    modi: "drun";
    width: 20;
-   font: "DejaVu Sans Mono Nerd 12";
+   font: "JetBrainsMono Nerd Font Mono 14";
    show-icons: true; 
    icon-theme: "Obsidian";
    cycle: true;

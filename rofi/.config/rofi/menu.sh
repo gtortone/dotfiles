@@ -33,7 +33,9 @@ case $chosen in
         /home/tortone/.config/rofi/rofi-pulse.sh source &
         ;;
     5) 
-        /home/tortone/.config/rofi/monitor-layout.sh &
+        /home/tortone/.config/rofi/monitor-switcher.py
+        sleep 3
+        i3-msg -t run_command restart
         ;;
     6)
         pcmanfm $HOME &
