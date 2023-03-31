@@ -1,4 +1,5 @@
 #!/bin/bash
 
+i3 restart
 setxkbmap it
 notify-send -i display "Display profile" "$AUTORANDR_CURRENT_PROFILE"
