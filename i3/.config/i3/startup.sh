@@ -6,8 +6,7 @@
 #fi
 
 # disable touchpad tap
-xinput set-prop "SYNA8004:00 06CB:CD8B Touchpad" "Synaptics Tap Action" 0
-xinput set-prop "SYNA8004:00 06CB:CD8B Touchpad" "Synaptics Tap Time" 0
+xinput set-prop "SYNA8004:00 06CB:CD8B Touchpad" "libinput Tapping Enabled" 0
 
 # notification daemon
 dunst &
