@@ -1,7 +1,9 @@
 #!/bin/sh
 
-# detect active display
-autorandr --force --change
+# run mons as daemon to fallback display on lcd
+#if [ -z "$(pgrep mons)" ] ; then
+#   mons -a &
+#fi
 
 # disable touchpad tap
 xinput set-prop "SYNA8004:00 06CB:CD8B Touchpad" "Synaptics Tap Action" 0
@@ -15,9 +17,6 @@ if [ -z "$(pgrep picom)" ] ; then
    picom &
 fi
 
-# wallpaper
-feh --no-fehbg --bg-fill .cache/wall
-
 # xbindkeys
 if [ -z "$(pgrep xbindkeys)" ] ; then
    xbindkeys &
@@ -27,11 +26,6 @@ fi
 if [ -z "$(pgrep greenclip)" ] ; then
    greenclip daemon &
 fi
-
-# onedrive
-killall onedrive
-killall onedrive_tray
-onedrive_tray -s -a "--disable-notifications --monitor" &
 
 # autocutsel
 #if [ -z "$(pgrep autocutsel)" ] ; then
@@ -60,9 +54,17 @@ xautolock -time 15 -locker slock &
 # caffeine (suspend management)
 caffeine start &
 
-# volume-control
-$HOME/.xmonad/volume-control.sh
-
 # SSH agent
 eval $(gnome-keyring-daemon -s)
 export SSH_AUTH_SOCK
+
+# wallpaper
+feh --no-fehbg --bg-fill .cache/wall
+
+# wait polybar tray is ready before start onedrive_tray...
+sleep 2
+
+# onedrive
+if [ -z "$(pgrep onedrive_tray)" ] ; then
+   onedrive_tray --onedrive-args "--verbose --monitor --disable-notifications" &
+fi
