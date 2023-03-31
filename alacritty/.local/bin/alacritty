@@ -1,13 +1,9 @@
 #!/bin/zsh
 
-CURMON=`cat ~/.autorandr_current_profile`
+focus_monitor=$(i3-msg  -t get_workspaces | jq -r '.[] | select(.focused == true) | .output')
 
-if [[ $CURMON == "mobile" ]]
-then
+if [[ $focus_monitor == "eDP1" ]]; then
    exec /usr/bin/alacritty -o font.size=8.5 "$@"
-elif [[ $CURMON == "docked" ]] 
-then
-   exec /usr/bin/alacritty -o font.size=12 "$@"
 else
-   exec /usr/bin/alacritty "$@"
+   exec /usr/bin/alacritty -o font.size=12 "$@"
 fi
