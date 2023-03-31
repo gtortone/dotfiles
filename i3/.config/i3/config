@@ -24,6 +24,9 @@ tiling_drag modifier titlebar
 # gap
 gaps inner 5px
 
+# focus wrapping
+focus_wrapping no
+
 # to detect keys combo: xbindkeys -mk
 
 # start a terminal  
@@ -175,7 +178,7 @@ client.placeholder      #ebb346 #1e1e20 #e39866 #dc7f41 #dc7f41
 client.background       #1e1e20
 
 #exec --no-startup-id ~/.config/i3/session-setup.sh
-exec --no-startup-id autorandr -l docked --default mobile
+exec --no-startup-id autorandr --change --default mobile --force
 
 # launch polybar (use flock to avoid overlapping of launcher that cause multiple bars on same screen)
 exec_always --no-startup-id sleep 3; flock -n -o ~/.flock-i3 -c ~/.config/polybar/launch.sh ; ~/.config/i3/startup.sh
