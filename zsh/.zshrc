@@ -61,16 +61,28 @@ prompt spaceship
 export EDITOR=vim
 
 # zsh suggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-bindkey '^[s' autosuggest-accept
+if [ $DISPLAY ]; then
+   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+   bindkey '^[s' autosuggest-accept
+fi
 
 # bat
 alias cat='bat -Pp --theme=ansi --color=always'
 export LESS='-RX'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# increase keyboard repeat rate
-/usr/bin/xset r rate 250 25
+if [ $DISPLAY ]; then
+   # increase keyboard repeat rate
+   /usr/bin/xset r rate 250 25
+else
+   # set it keyboard layout if lid is open and user is on text console
+   lid=$(cat /proc/acpi/button/lid/LID/state  | sed -e 's/.*:\s*//g')
+   if [ $lid = "open" ]; then
+      loadkeys it
+   else
+      loadkeys us
+   fi
+fi
 
 alias ls='ls -N --color=auto'
 
