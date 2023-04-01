@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sleep 2
+
+export XAUTHORITY=/var/run/lxdm/lxdm-:0.auth
+/usr/bin/xrandr -d :0 --output eDP1 --mode 1920x1080 
+/usr/bin/xrandr -d :0 --output HDMI1 --mode 1920x1080 --same-as eDP1 
+/usr/bin/xrandr -d :0 --output DP2-1 --mode 1920x1080 --same-as eDP1
