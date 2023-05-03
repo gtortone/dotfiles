@@ -111,22 +111,22 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Propo
     style: Regular 
 
   # Bold font face
   bold:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Propo
     style: Bold
 
   # Italic font face
   italic:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Propo
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Propo
     style: Bold Italic
 
   # Point size

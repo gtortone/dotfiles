@@ -78,6 +78,8 @@ Arch Linux (April 2023)
     - ```JetBrains Mono NL Regular Nerd Font Complete.ttf```
 - refresh fonts cache: ```fc-cache -fv```
 - list fonts: ```fc-list```
+- fonts GUI: ```gucharmap```
+- fonts fix: ```nerdfix```
 	
 ### Keys binding configuration
 	
