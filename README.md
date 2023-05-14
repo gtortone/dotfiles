@@ -71,6 +71,7 @@ Arch Linux (April 2023)
 - list application / MIME-type association: ```mimeo --app2mime```
 - get MIME-type from file: ```mimeo -m file.pdf``` 
 - set preferred application from desktop file MIME-types: ```mimeo --prefer vlc.desktop```
+- list desktop files associated with the given MIME-types: ```mimeo --mime2desk application/pdf```
 
 ### Fonts configuration
 
