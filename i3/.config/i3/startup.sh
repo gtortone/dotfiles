@@ -12,9 +12,10 @@ xinput set-prop "SYNA8004:00 06CB:CD8B Touchpad" "libinput Tapping Enabled" 0
 dunst &
 
 # picom compositor
-if [ -z "$(pgrep picom)" ] ; then
-   picom &
-fi
+# 20/06/2023 disabled to check i3/Xorg hangs...
+#if [ -z "$(pgrep picom)" ] ; then
+#   picom &
+#fi
 
 # xbindkeys
 if [ -z "$(pgrep xbindkeys)" ] ; then
@@ -48,7 +49,13 @@ if [ -z "$(pgrep udiskie)" ] ; then
 fi
 
 # slock (after 15 min inactivity)
-xautolock -time 15 -locker slock &
+# 20/06/2023 disabled to check i3/Xorg hangs...
+# xautolock -time 15 -locker slock &
+
+# solaar
+if [ -z "$(pgrep solaar)" ] ; then
+   /usr/bin/solaar -b symbolic -w hide &
+fi
 
 # caffeine (suspend management)
 caffeine start &
@@ -67,3 +74,6 @@ sleep 2
 if [ -z "$(pgrep onedrive_tray)" ] ; then
    onedrive_tray --onedrive-args "--verbose --monitor --disable-notifications" &
 fi
+
+# disable DPMS and prevent screen from blanking
+/usr/bin/xset s off -dpms
