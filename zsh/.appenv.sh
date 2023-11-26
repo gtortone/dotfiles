@@ -13,10 +13,10 @@ export ROOTSYS="/opt/root"
 export PATH="${PATH}:${ROOTSYS}/bin"
 
 # EPICS environment
-##export EPICS_BASE="/opt/epics/base"
-##export EPICS_HOST_ARCH=`$EPICS_BASE/startup/EpicsHostArch.pl`
-##export PATH="${PATH}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}"
-##export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${EPICS_BASE}/lib/${EPICS_HOST_ARCH}"
+#export EPICS_BASE="/opt/epics/base"
+#export EPICS_HOST_ARCH=`$EPICS_BASE/startup/EpicsHostArch.pl`
+export PATH="${PATH}:/usr/bin/linux-x86_64"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/lib/linux-x86_64"
 ## export PYEPICS_LIBCA=$EPICS_BASE/lib/linux-x86_64/libca.so
 
 #source /home/tortone/devel/Fazia/Ganil/v201603-17-jessie/narval.sh
@@ -76,3 +76,10 @@ export MIDAS_EXPT_NAME=e777
 export JAVA_HOME="/usr/lib/jvm/jdk-15.0.1"
 export PATH="$PATH:${JAVA_HOME}/bin"
 
+# debos
+export PATH="$PATH:/opt/go/bin"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
