@@ -10,8 +10,9 @@ set $super Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono Nerd 10 
-default_border pixel 2
+#font pango:DejaVu Sans Mono Nerd 10 
+font pango:DejaVuSansM Nerd Font Mono 10 
+default_border pixel 4
 default_floating_border pixel 2
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -54,10 +55,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -170,7 +171,7 @@ bindsym $mod+r mode "resize"
 
 # colors
 # class                 border  bground text    indicator child_border
-client.focused          #ffa500 #ffa500 #000000 #e39866 #ffa500
+client.focused          #ffa500 #ffa500 #000000 #e39866 #66ff33
 client.focused_inactive #708090 #1e1e20 #e39866 #708090 #708090
 client.unfocused        #708090 #1e1e20 #708090 #708090 #708090
 client.urgent           #ebb346 #1e1e20 #e39866 #dc7f41 #dc7f41
