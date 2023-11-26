@@ -48,3 +48,6 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
+" markdown-preview plugin
+nmap <C-s> <Plug>MarkdownPreview
+let g:mkdp_theme = 'light'
