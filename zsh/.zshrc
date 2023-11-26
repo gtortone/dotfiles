@@ -69,7 +69,7 @@ fi
 # bat
 alias cat='bat -Pp --theme=ansi --color=always'
 export LESS='-RX'
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER=manpager
 
 if [ $DISPLAY ]; then
    # increase keyboard repeat rate
