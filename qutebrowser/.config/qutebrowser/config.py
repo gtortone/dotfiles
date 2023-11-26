@@ -340,5 +340,5 @@ config.set('content.blocking.method', 'both')
 # Bindings for normal mode
 config.bind('xb', 'config-cycle -t statusbar.show never always')
 config.bind('xt', 'config-cycle -t tabs.show always switching')
-config.bind('t', 'set-cmd-text -s :open -t')
+config.bind('t', 'cmd-set-text -s :open -t')
 config.bind('M', 'hint links spawn --detach mpv {hint-url}')
