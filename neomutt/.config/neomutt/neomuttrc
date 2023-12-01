@@ -35,7 +35,7 @@ set sleep_time = 0            # speed up folders switch
 
 # smtp
 set smtp_url=smtp://tortone@mbox.na.infn.it:587
-set smtp_pass = `pass show imap-qz.na.infn.it`
+set smtp_pass = `pass show mail/imap-qz.na.infn.it`
 set ssl_starttls = yes
 set ssl_force_tls = yes
 
