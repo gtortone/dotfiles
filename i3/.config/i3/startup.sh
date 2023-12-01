@@ -22,16 +22,10 @@ if [ -z "$(pgrep xbindkeys)" ] ; then
    xbindkeys &
 fi
 
-# greenclip
-if [ -z "$(pgrep greenclip)" ] ; then
-   greenclip daemon &
+# parcellite
+if [ -z "$(pgrep parcellite)" ] ; then
+   /usr/bin/parcellite &
 fi
-
-# autocutsel
-#if [ -z "$(pgrep autocutsel)" ] ; then
-#   autocutsel -fork &
-#   autocutsel -selection PRIMARY -fork &
-#fi
 
 # network applet
 if [ -z "$(pgrep nm-applet)" ] ; then
