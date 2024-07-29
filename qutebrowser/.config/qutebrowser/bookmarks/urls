@@ -11,3 +11,74 @@ https://fabianlee.org/2023/01/22/openwrt-bridge-vlan-filtering-for-openwrt-21-x-
 https://www.youtube.com/watch?v=lyJh54D9v2k #31 Repair of PS4 CUH-1215A Shutting Down - YouTube
 https://www.ilpuntotecnico.com/forum/index.php?topic=80632.0 TIM Hub DGA4132 (AGTHP) in modalità bridge (solo modem)
 https://forum.openwrt.org/t/half-bridge-mode-wan-ip-passthrough/137708 Half Bridge Mode - WAN IP Passthrough - Network and Wireless Configuration - OpenWrt Forum
+https://stackoverflow.com/questions/39491856/transmitting-binary-data-throught-ttyacm#39498112 linux - Transmitting binary data throught ttyACM - Stack Overflow
+https://github.com/raczben/zynq_flash raczben/zynq_flash: QSPI flash support for Xilinx's Zynq devices
+https://www.thirtythreeforty.net/posts/2020/01/mastering-embedded-linux-part-3-buildroot/ Mastering Embedded Linux, Part 3: Buildroot • &> /dev/null
+https://kgolding.co.uk/blog/2020/06/12/buldroot-tips-and-tricks/ Buldroot - tips and tricks - Kevin Golding
+https://www.taswegian.com/WoodgrainWizard/tiki-index.php?page=Introduction-to-Processor-Hardware Dr Boo's Woodgrain Wizadry | Introduction to Processor Hardware
+http://www.cheeptech.com/2600mods/2600mods.html Atari 2600 video mods comparisons
+https://www.instructables.com/ATARI-2600-Video-Composite-mod/ ATARI 2600 Video Composite Mod : 7 Steps (with Pictures) - Instructables
+http://ftp.pigwa.net/stuff/collections/Atari%20books/ Index of /stuff/collections/Atari books
+https://microcontrollerslab.com/esp32-pinout-use-gpio-pins/ ESP32 Pinout - How to use GPIO pins? Pin mapping of ESP32
+https://mansfield-devine.com/speculatrix/2022/04/zolatron-64-more-adventures-in-level-shifting/ Zolatron 64: More adventures in level shifting - Machina Speculatrix
+https://gamesx.com/wiki/doku.php?id=av:2600_s-video_mod av:2600_s-video_mod [NFG Games + GameSX]
+https://silvestron.com/atari-2600-composite-mod-installation-pal-jr-rev-f/ Atari 2600 Composite Mod Installation – PAL Jr Rev. F – silvestron's bits and bytes
+http://blog.tynemouthsoftware.co.uk/2015/02/atari-2600-composite-video-modification.html Tynemouth Software: Atari 2600 Composite Video Modification
+https://forums.atariage.com/topic/129028-anyone-tried-lynxs-068-euro-atari-2600-junior-composite-mod/ Anyone tried "Lynx's 0,68 Euro ATARI 2600 Junior Composite Mod" ? - Atari 2600 - AtariAge Forums
+https://www.atariage.com/2600/faq/index.html?SystemID=2600#composite https://www.atariage.com/2600/faq/index.html?SystemID=2600#composite
+https://forums.atariage.com/topic/128279-cd4050-av-mod-on-pal-atari-2600/ CD4050 A/V mod on PAL atari 2600 - Hardware - AtariAge Forums
+https://www.diyengineers.com/2020/12/17/2n2222-transistor-npn/ How to use the 2N2222 Transistor (NPN) (with examples) - DIY Engineers
+https://learn.sparkfun.com/tutorials/bi-directional-logic-level-converter-hookup-guide Bi-Directional Logic Level Converter Hookup Guide - SparkFun Learn
+https://hydraraptor.blogspot.com/2021/08/esp32-auto-program-fix.html HydraRaptor: ESP32 auto program fix
+https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-reference/peripherals/dedic_gpio.html#manipulate-gpios-by-writing-assembly-code Dedicated GPIO - ESP32-S2 - — ESP-IDF Programming Guide latest documentation
+https://learn.sparkfun.com/tutorials/logic-levels/all Logic Levels - SparkFun Learn
+https://chester.me/archives/2021/02/atari-2600-on-a-breadboard-part-2-reading-a-cart/ Atari 2600 on a breadboard, part II: reading a cart - chester's blog
+https://stm32-base.org/ Home | STM32-base project
+https://github.com/dadecoza/atari2600-arduino-cart/tree/master GitHub - dadecoza/atari2600-arduino-cart: Load Atari 2600 games from SD Card using an Arduino Uno
+https://learn.adafruit.com/digital-circuits-6-eprom-emulator/the-ui Emulator Hardware | Digital Circuits 6: An EPROM Emulator | Adafruit Learning System
+https://github.com/analogdevicesinc/meta-adi/tree/master/meta-adi-xilinx meta-adi/meta-adi-xilinx at master · analogdevicesinc/meta-adi · GitHub
+https://support.xilinx.com/s/article/73377?language=en_US 73377 - 2019.2 PetaLinux: Missing or Incorrect instructions in the 2019.2 release version of (UG1144)
+https://www.timescale.com/blog/timescaledb-vs-6a696248104e/ TimescaleDB vs. PostgreSQL for time-series
+https://github.com/timescale/benchmark-postgres GitHub - timescale/benchmark-postgres: Tools for benchmarking TimescaleDB vs PostgreSQL
+https://tdengine.com/what-is-a-time-series-database/ What Is a Time Series Database and Why Do I Need One? | TDengine
+https://support.xilinx.com/s/article/Using-JTAG-UART-as-console-to-boot-u-boot?language=en_US Using JTAG UART as a console to boot U-Boot
+http://opentsdb.net/docs/build/html/user_guide/query/index.html Querying or Reading Data — OpenTSDB 2.4 documentation
+https://venturebeat.com/business/database-trends-the-rise-of-the-time-series-database/ Database trends: The rise of the time-series database | VentureBeat
+https://www.influxdata.com/blog/relational-databases-vs-time-series-databases/ Relational Databases vs Time Series Databases | InfluxData
+https://longhornengineer.com/category/hardware-hacking/atari-av-mods/ Atari A/V Mods | The Longhorn Engineer
+https://github.com/Xilinx/linux-xlnx/blob/master/Documentation/driver-api/dmaengine/client.rst linux-xlnx/Documentation/driver-api/dmaengine/client.rst at master · Xilinx/linux-xlnx
+https://www.geeksforgeeks.org/implement-thread-safe-queue-in-c/ Implement thread-safe queue in C++ - GeeksforGeeks
+https://www.comefistore.it/ ComefiStore: vendita diretta di profili e barre in alluminio
+https://archive.org/details/retro-roms-best-set Retro Roms "Best" Set : Free Download, Borrow, and Streaming : Internet Archive
+https://archive.org/details/no-intro_romsets No-Intro Romsets (2023) : Free Download, Borrow, and Streaming : Internet Archive
+https://stackabuse.com/how-to-print-colored-text-in-python/ How to Print Colored Text in Python
+https://easymcp2221.readthedocs.io/en/stable/ Easy MCP2221 — Easy MCP2221(A) documentation
+https://github.com/switchdoclabs/SDL_Pi_HDC1080_Python3/blob/master/SDL_Pi_HDC1080.py SDL_Pi_HDC1080_Python3/SDL_Pi_HDC1080.py at master · switchdoclabs/SDL_Pi_HDC1080_Python3
+https://www.retrosix.wiki/extracting-composite-video-atari-2600 Extracting Composite Video (Atari 2600) - RetroSix Wiki
+https://blakadder.com/nspanel-teardown/ Sonoff NSPanel EU Switch in Detail | Blakadder's Smarthome Shenanigans
+https://e2e.ti.com/support/processors-group/processors/f/processors-forum/845157/am3354-multiple-cs-support-for-spi AM3354: Multiple CS support for SPI - Processors forum - Processors - TI E2E support forums
+https://wirelessthings.io/index.php/2023/01/31/telegraf-influxdb-grafana-with-docker-compose/ Telegraf, InfluxDB, Grafana with docker-compose – WirelessThings
+http://balika011.hu/switch/ Switch board layers
+https://gbatemp.net/threads/pinout-of-nintendo-switch-fan.572223/ pinout of nintendo switch fan | GBAtemp.net - The Independent Video Game Community
+https://github.com/diegoparrilla/atarist-sidecart-raspberry-pico diegoparrilla/atarist-sidecart-raspberry-pico: AtariST cartridge emulator based on Raspberry Pi Pico and RP2040
+https://github.com/nickbild/picoROM/tree/main nickbild/picoROM: Emulate ROM chips with a Raspberry Pi Pico.
+https://github.com/pschatzmann/pico-arduino pschatzmann/pico-arduino: Arduino API Library for the Raspberry Pico
+https://github.com/jasonfrowe/2600MultiCart jasonfrowe/2600MultiCart: Multi-Cartridge for the Atari 2600+
+https://github.com/Sreekesh92/rp2040_xip_cache Sreekesh92/rp2040_xip_cache
+https://stackoverflow.com/questions/68245183/how-to-read-from-uart-peripheral-with-a-dma-channel c - How to read from UART peripheral with a DMA channel? - Stack Overflow
+https://www.makermatrix.com/blog/read-and-write-data-with-the-pi-pico-onboard-flash/ Read and write data with the Pi Pico onboard flash – Maker Matrix
+https://github.com/rhulme/picoROM_pio/tree/master rhulme/picoROM_pio: PIO/DMA implementation of picoROM project to simulate an EEPROM using a Raspberry Pico
+https://github.com/khill25/Dreamdrive64 khill25/Dreamdrive64: Nintendo 64 flash cart using a Raspberry Pi RP2040
+https://github.com/djtersteegc/Apple-68k-FujiNet djtersteegc/Apple-68k-FujiNet: Repo for early testing of FujiNet PCB's for 68k Apple Macs
+https://github.com/lexus2k/tinyslip lexus2k/tinyslip: Tiny implementation of SLIP protocol (Serial line IP)
+https://github.com/ve3wwg/slip ve3wwg/slip: SLIP protocol for Arduino/Teensy/Posix
+https://github.com/OlegMishin/ESP8266_RS232_SLIP_router/tree/main OlegMishin/ESP8266_RS232_SLIP_router: ESP8266 based WiFi SLIP router with RS232 interface
+https://github.com/gicking/NeoHWSerial gicking/NeoHWSerial: Arduino HardwareSerial with attachInterrupt for RX chars
+https://gist.github.com/laotie/f66abc733a6473300625f5658821001a ESP32-S2 (beta) dedicated GPIO example
+https://github.com/cpq/bare-metal-programming-guide cpq/bare-metal-programming-guide: A bare metal programming guide (ARM microcontrollers)
+https://code.google.com/archive/p/corkami/downloads Google Code Archive - Long-term storage for Google Code Project Hosting.
+https://www.atarimax.com/jindroush.atari.org/asio.html SIO
+https://github.com/redhawk668/Atari-600XL-S-Video-Composite redhawk668/Atari-600XL-S-Video-Composite: Improved S-Video & Composite for the Atari 600XL, might work on the 800XL too.
+https://ataribits.weebly.com/ AtariBits - Home
+https://forums.atariage.com/topic/102639-color-bleed-problem/ Color Bleed Problem - Atari 8-Bit Computers - AtariAge Forums
+https://forums.atariage.com/topic/43793-newbie-question-how-to-load-a-game/ Newbie question: how to load a game - Atari 8-Bit Computers - AtariAge Forums

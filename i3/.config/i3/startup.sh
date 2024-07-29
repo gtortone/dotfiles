@@ -55,8 +55,7 @@ fi
 caffeine start &
 
 # SSH agent
-eval $(gnome-keyring-daemon -s)
-export SSH_AUTH_SOCK
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
 # wallpaper
 feh --no-fehbg --bg-fill .cache/wall

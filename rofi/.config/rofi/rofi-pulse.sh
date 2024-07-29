@@ -15,7 +15,7 @@ if [[ ! "$type" =~ (sink|source) ]]; then
 fi
 
 function formatlist {
-    awk "/^$type/ {s=\$1\" \"\$2;getline;gsub(/^ +/,\"\",\$0);print s\" \"\$0}"
+    awk "/^$type/ {s=\$1\" \"\$2;getline;gsub(/^ +/,\"\",\$0);print s\" \"\$0}" | tr -d \[\]
 }
 
 list=$(ponymix -t $type list | formatlist)

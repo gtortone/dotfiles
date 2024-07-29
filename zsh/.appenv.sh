@@ -1,3 +1,6 @@
+# Neovim
+alias vi='/usr/bin/nvim'
+
 # Pine
 alias pine='/usr/bin/alpine'
 
@@ -5,8 +8,7 @@ alias pine='/usr/bin/alpine'
 alias telnet='/usr/bin/telnet-ssl'
 
 # SSH agent
-eval $(gnome-keyring-daemon -s 2>/dev/null)
-export SSH_AUTH_SOCK
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
 # ROOT environment
 export ROOTSYS="/opt/root"
@@ -51,12 +53,13 @@ setup-vivado-2020.2() {
    alias vitis='source /opt/Xilinx/Vitis_HLS/2020.2/settings64.sh ; export SWT_GTK3=0 ; export GTK2_RC_FILES=0 ; vitis'
 }
 
-
 # NGINX
 ## alias nginx='sudo /opt/nginx/sbin/nginx'
 
 # deck
 ## alias deck='cd /opt/appimage && ./love-11.3-x86_64.AppImage UPDeck_2-1-19.love'
+
+alias kek-conn='~/devel/Belle2/utils/kek-conn'
 
 # MIDAS 
 export MIDASBASE=/opt/midas
@@ -83,3 +86,6 @@ export PATH="$PATH:/opt/go/bin"
 #export PYENV_ROOT="$HOME/.pyenv"
 #command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 #eval "$(pyenv init -)"
+
+# set Arc-Dark theme for GTK4 apps
+export GTK_THEME=Arc-Dark

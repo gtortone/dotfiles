@@ -86,4 +86,22 @@ fi
 
 alias ls='ls -N --color=auto'
 
+# redefine ESC-<up>, ESC-<down>, ESC-<left>, ESC-<right> to avoid
+# collisions with sudo plugin
+
+bindkey -M emacs '\e\eOA' redisplay
+bindkey -M vicmd '\e\eOA' redisplay
+bindkey -M viins '\e\eOA' redisplay
+bindkey -M emacs '\e\eOB' redisplay
+bindkey -M vicmd '\e\eOB' redisplay
+bindkey -M viins '\e\eOB' redisplay
+bindkey -M emacs '\e\eOC' redisplay
+bindkey -M vicmd '\e\eOC' redisplay
+bindkey -M viins '\e\eOC' redisplay
+bindkey -M emacs '\e\eOD' redisplay
+bindkey -M vicmd '\e\eOD' redisplay
+bindkey -M viins '\e\eOD' redisplay
+
 . ~/.appenv.sh
+
+

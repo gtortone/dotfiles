@@ -4,7 +4,7 @@ Port 993
 User tortone
 PassCmd "pass show mail/imap-qz.na.infn.it | head -n 1"
 SSLType IMAPS
-SSLVersion TLSv1.2
+#SSLVersion TLSv1.3
 
 IMAPStore infnna-remote
 Account infnna
@@ -19,8 +19,10 @@ Far :infnna-remote:
 Near :infnna-local:
 Patterns INBOX
 Create Far
-Sync All
+Sync All 
+Remove Both
 Expunge Both
+CopyArrivalDate yes
 SyncState *
 
 Channel infnna-sent
@@ -29,6 +31,7 @@ Near :infnna-local:
 Patterns Sent
 Create Far
 Sync All
+Remove Both
 Expunge Both
 SyncState *
 
@@ -38,6 +41,7 @@ Near :infnna-local:
 Patterns *
 Create Both
 Sync All
+Remove Both
 Expunge Both
 SyncState *
 
