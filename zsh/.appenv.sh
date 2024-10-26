@@ -18,7 +18,7 @@ export PATH="${PATH}:${ROOTSYS}/bin"
 #export EPICS_BASE="/opt/epics/base"
 #export EPICS_HOST_ARCH=`$EPICS_BASE/startup/EpicsHostArch.pl`
 export PATH="${PATH}:/usr/bin/linux-x86_64"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/lib/linux-x86_64"
+#export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/lib/linux-x86_64"
 ## export PYEPICS_LIBCA=$EPICS_BASE/lib/linux-x86_64/libca.so
 
 #source /home/tortone/devel/Fazia/Ganil/v201603-17-jessie/narval.sh
@@ -67,7 +67,7 @@ export MIDASSYS=$MIDASBASE
 export ROOTANASYS=$MIDASBASE
 export JSROOTSYS=$MIDASBASE/packages/jsroot
 export PATH=$PATH:$MIDASSYS/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/midas/lib
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/midas/lib
 # experiment vars
 export MIDAS_EXPTAB=$MIDASBASE/online/exptab
 export MIDAS_EXPT_NAME=e777
