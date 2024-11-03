@@ -6,16 +6,16 @@
 #fi
 
 # disable touchpad tap
-xinput set-prop "SYNA8004:00 06CB:CD8B Touchpad" "libinput Tapping Enabled" 0
+#xinput set-prop "SYNA8004:00 06CB:CD8B Touchpad" "libinput Tapping Enabled" 0
 
 # notification daemon
 dunst &
 
 # picom compositor
 # 20/06/2023 disabled to check i3/Xorg hangs...
-#if [ -z "$(pgrep picom)" ] ; then
-#   picom &
-#fi
+if [ -z "$(pgrep picom)" ] ; then
+   picom &
+fi
 
 # xbindkeys
 if [ -z "$(pgrep xbindkeys)" ] ; then
@@ -54,18 +54,20 @@ fi
 # caffeine (suspend management)
 caffeine start &
 
-# SSH agent
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
-
 # wallpaper
 feh --no-fehbg --bg-fill .cache/wall
 
 # wait polybar tray is ready before start onedrive_tray...
-sleep 2
+#sleep 2
+
+# krapplet 
+#if [ -z "$(pgrep krapplet)" ] ; then
+#   krapplet &
+#fi
 
 # onedrive
 if [ -z "$(pgrep onedrive_tray)" ] ; then
-   onedrive_tray --onedrive-args "--verbose --monitor --disable-notifications" &
+   (sleep 2 && onedrive_tray --onedrive-args "--verbose --monitor" &)
 fi
 
 # disable DPMS and prevent screen from blanking

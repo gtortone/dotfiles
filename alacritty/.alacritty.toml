@@ -55,19 +55,23 @@ TERM = "xterm-256color"
 size = 11.5
 
 [font.bold]
-family = "JetBrainsMonoNL NF"
+#family = "JetBrains Mono"
+family = "terminal-font"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMonoNL NF"
+#family = "JetBrains Mono"
+family = "terminal-font"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMonoNL NF"
+#family = "JetBrains Mono"
+family = "terminal-font"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMonoNL NF"
+#family = "JetBrains Mono"
+family = "terminal-font"
 style = "Regular"
 
 [font.offset]

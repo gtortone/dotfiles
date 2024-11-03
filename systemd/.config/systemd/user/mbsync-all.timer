@@ -2,8 +2,8 @@
 Description=Mailbox synchronization timer (ALL folders)
 
 [Timer]
-OnBootSec=2m
-OnUnitActiveSec=10m
+OnBootSec=120
+OnUnitActiveSec=600
 Unit=mbsync-all.service
 
 [Install]

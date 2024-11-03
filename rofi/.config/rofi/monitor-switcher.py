@@ -77,11 +77,11 @@ class MirrorOf(Action):
 
 def get_action_key(a: Action):
     if isinstance(a, Disable):
-        return f"襤 Disable"
+        return f"Disable"
     if isinstance(a, Alone):
-        return f" Alone"
+        return f"Alone"
     if isinstance(a, Primary):
-        return f" Primary"
+        return f"󰙴  Primary"
     if isinstance(a, LeftOf):
         return f" Left of {a.target.name}"
     if isinstance(a, RightOf):
@@ -159,9 +159,9 @@ def output_display(output):
     name = output.name
     display_name = name if (output.isPrimary == False) else f"{name}*"
     if name.startswith("eDP") or name.startswith("e-DP"):
-        return f" {display_name}"
+        return f"  {display_name}"
     else: 
-        return f" {display_name}"
+        return f"󰍹  {display_name}"
     
 
 def rofi_cmd(title, nb_lines):
@@ -175,7 +175,7 @@ def rofi_cmd(title, nb_lines):
     ]
 
 def run_rofi(title, menu_dic):
-    cancel_key=" Cancel"
+    cancel_key="  Cancel"
     menu_dic[cancel_key]= None
 
     kwargs = {}
@@ -266,13 +266,12 @@ def main():
     active_outputs = list(filter(lambda o: o.isActive, connected_outputs))
 
     selected_output = select_output(connected_outputs)
-    print(f"Selected output {selected_output}")
+    #print(f"Selected output {selected_output}")
 
     action = None
     if selected_output.isActive == True:
         action = select_disable_action(connected_outputs, selected_output)
         print(f"Action {action}")
-
     else:
         action = select_enable_action(connected_outputs, selected_output)
         print(f"Action {action}")

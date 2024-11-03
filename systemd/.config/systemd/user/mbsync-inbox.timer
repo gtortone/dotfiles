@@ -2,8 +2,8 @@
 Description=Mailbox synchronization timer (INBOX/Sent folders)
 
 [Timer]
-OnBootSec=5m
-OnUnitActiveSec=2m
+OnBootSec=300
+OnUnitActiveSec=120
 Unit=mbsync-inbox.service
 
 [Install]

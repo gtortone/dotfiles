@@ -3,7 +3,7 @@ Host imap-qz.na.infn.it
 Port 993
 User tortone
 PassCmd "pass show mail/imap-qz.na.infn.it | head -n 1"
-SSLType IMAPS
+TLSType IMAPS
 #SSLVersion TLSv1.3
 
 IMAPStore infnna-remote

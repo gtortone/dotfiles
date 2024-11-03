@@ -6,4 +6,5 @@ Type=oneshot
 ExecStart=/usr/bin/mbsync -q all-folders
 
 [Install]
-WantedBy=default.target
+WantedBy=timers.target
+#WantedBy=default.target

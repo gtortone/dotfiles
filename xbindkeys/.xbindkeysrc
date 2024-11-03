@@ -46,6 +46,11 @@
     m:0x0 + c:198
     XF86AudioMicMute
 
+# rotate available monitors
+"~/.xmonad/monitor-rotate.sh"
+    m:0xc + c:19
+    Control+Alt + 0
+
 # set mobile display: LCD monitor
 "autorandr -l mobile"
     m:0xc + c:10

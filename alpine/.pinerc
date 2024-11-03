@@ -265,7 +265,7 @@ address-book=
 global-address-book=
 
 # Set by Pine; controls display of "new version" message.
-last-version-used=6.25
+last-version-used=6.26
 
 # This names the path to an alternative program, and any necessary arguments,
 # to be used in posting mail messages.  Example:
@@ -713,7 +713,7 @@ wp-columns=
 mailcap-check-interval=60
 
 # Set by Alpine; controls beginning-of-month sent-mail pruning.
-last-time-prune-questioned=122.4
+last-time-prune-questioned=124.10
 folder-foreground-color=
 folder-background-color=
 directory-foreground-color=

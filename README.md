@@ -24,9 +24,9 @@ Arch Linux (April 2023)
 ### Applications
 
 - Shell: **zsh**
-   - plugins: oh-my-zsh, fzf, spaceship
-- Editor: **vim**
-   - theme: ayu-vim (patched)
+   - plugin manager: zinit
+   - plugins: powerlevel10k, syntax-highlighting, completions, autosuggestions
+- Editor: **neovim**
 - Terminal: **alacritty**
 - MIME manager: **mimeo**
 - Calculator: **mate-calculator**
@@ -37,7 +37,7 @@ Arch Linux (April 2023)
 - Image viewer: **sxiv** / **viewnior**
 - Video player: **vlc** / **mpv**
 - Screencast: **ffmpeg** / **slop** / **screenkey**
-- Audio mixer: **pulsemixer** / **pavucontrol**
+- Audio mixer: **pwvucontrol**
 - Launcher: **dmenu** / **rofi**
 - Screenshot: **maim**
 - Calendar: **gcal**

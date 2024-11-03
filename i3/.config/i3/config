@@ -35,9 +35,9 @@ bindsym $mod+Shift+Return exec --no-startup-id ~/.local/bin/alacritty
 
 # start browser      $mod + Shift + backslash
 # external keyboard
-bindcode $mod+Shift+51 exec --no-startup-id /usr/bin/qutebrowser
+bindcode $mod+Shift+51 exec --no-startup-id /usr/bin/zen-browser
 # notebook keyboard
-bindcode $mod+Shift+49 exec --no-startup-id /usr/bin/qutebrowser
+bindcode $mod+Shift+49 exec --no-startup-id /usr/bin/zen-browser
 
 # kill focused window
 bindsym $mod+Shift+c kill

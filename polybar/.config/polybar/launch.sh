@@ -14,9 +14,9 @@
 
 nmons=$(polybar -m | wc -l)
 mode=$(mons | grep -i "mode" | awk -F ':' '{print $2}' | xargs)
-edp1_monitor=$(xrandr --listmonitors | grep -i 'edp1' | awk '{print $4}')
+edp1_monitor=$(xrandr --listmonitors | grep -i 'edp-1' | awk '{print $4}')
 hdmi1_monitor=$(xrandr --listmonitors | grep -i 'hdmi1' | awk '{print $4}')
-dp21_monitor=$(xrandr --listmonitors | grep -i 'dp2-1' | awk '{print $4}')
+dp21_monitor=$(xrandr --listmonitors | grep -i 'dp-1-1' | awk '{print $4}')
 
 echo $edp1_monitor
 echo $hdmi1_monitor

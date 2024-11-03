@@ -1,2 +1,7 @@
 polybar/.config/polybar/*.log
 i3/.config/i3/workspace-to-monitor.conf
+vim/.vim/autoload
+vim/.vim/plugged
+abook/.abook/addressbook
+vifm/.config/vifm/scripts/
+vifm/.config/vifm/vifm-help.txt

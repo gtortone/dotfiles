@@ -7,4 +7,5 @@ ExecStart=/usr/bin/mbsync -q inbox-sent
 ExecStartPost=/usr/bin/notmuch new
 
 [Install]
-WantedBy=default.target
+WantedBy=timers.target
+#WantedBy=default.target

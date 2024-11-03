@@ -2,7 +2,7 @@
 
 focus_monitor=$(i3-msg  -t get_workspaces | jq -r '.[] | select(.focused == true) | .output')
 
-if [[ $focus_monitor == "eDP1" ]]; then
+if [[ $focus_monitor == "eDP-1" ]]; then
    exec /usr/bin/alacritty -o font.size=8.5 "$@"
 else
    exec /usr/bin/alacritty -o font.size=12 "$@"

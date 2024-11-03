@@ -1,4 +1,4 @@
-text/html; qutebrowser --target window %s; nametemplate=%s.html
+text/html; zen-browser --new-window %s; nametemplate=%s.html
 text/*; /usr/bin/mimeo %s
 audio/*; /usr/bin/mimeo %s
 video/*; /usr/bin/mimeo %s
